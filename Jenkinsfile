@@ -27,7 +27,7 @@ pipeline{
 
         stage('Archive test results'){
             steps{
-                archiveArtifacts artifacts:'target/surefire-reports/*.xml', fingerprint=true
+                archiveArtifacts artifacts: 'target/surefire-reports/*.xml', fingerprint:true
             }
         }
     }
