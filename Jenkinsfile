@@ -34,7 +34,7 @@ pipeline{
 
     post{
         always{
-            emialext(
+            emailext(
                 subject:"Autonation reports ${env.JOB_NAME} #${env. BUILD_NUMBER} - ${currentBuild.currentResult}",
                 body:"Please find the attached reports of test",
                 to:"${EMAIL_RECIPIENTS}",
