@@ -21,7 +21,7 @@ pipeline{
 
         stage('test'){
             steps{
-                sh "${MAVEN_HOME}/bin/mvn -DsuiteXmlFile=testng.xml"
+                sh "${MAVEN_HOME}/bin/mvn test -DsuiteXmlFile=testng.xml"
             }
         }
 
