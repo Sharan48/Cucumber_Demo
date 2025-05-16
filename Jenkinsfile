@@ -35,7 +35,7 @@ pipeline{
     post{
         always{
             emialext(
-                subject:"Autonation reports ${env.JOB_NAME} #${env.BUID_NAME} - ${currentBuild.currentResult}",
+                subject:"Autonation reports ${env.JOB_NAME} #${env. BUILD_NUMBER} - ${currentBuild.currentResult}",
                 body:"Please find the attached reports of test",
                 to:"${EMAIL_RECIPIENTS}",
                 attachmentsPattern:"**/target/surefire-reports/*.xml,**/target/surfire-reports/*.html",
