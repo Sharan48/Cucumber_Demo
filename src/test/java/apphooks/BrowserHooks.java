@@ -4,6 +4,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -17,7 +18,10 @@ public class BrowserHooks {
     @Before
     public void setupBrowser() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless", "--disable-gpu",
+                "--window-size=1920,1080");
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         Thread.sleep(5000);
         System.out.println("🔹 Browser Launched");
